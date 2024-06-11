@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  form {
+    margin: 20px;
+  }
+  
+  input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+  }
+  
+  button {
+    padding: 8px 12px;
+  }
+  
+  nav {
+    margin-top: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: blue;
+    margin-right: 15px;
+  }
+  

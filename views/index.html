@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+</head>
+<body>
+    <form action="/" method="POST">
+        <input name="message" placeholder="Enter message" type="text" required>
+        <button type="submit">Send</button>
+        <input type="hidden" name="username" value="">
+      </form>
+      <p>Messages:</p>
+      <p id="messages"></p>
+      <nav>
+        <a href="/contactus">Contact Us</a>
+      </nav>
+      <script>
+        const username = localStorage.getItem('username');
+        document.querySelector('input[name="username"]').value = username;
+    
+        fetch('/messages.txt')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('messages').textContent = data.replace(/\n/g, ', ').slice(0, -2);
+          });
+      </script>
+</body>
+</html>
